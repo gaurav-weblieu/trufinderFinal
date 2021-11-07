@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back"
+    tools:context=".login.OTPActivity">
+
+    <View
+        android:id="@+id/bg_top_header"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".20"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0"/>
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bg_top_header"
+        app:srcCompat="@drawable/logo" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".80"
+        android:layout_margin="@dimen/_15sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1">
+
+        <com.business.findtrue.custom.TitleTextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/otp"
+            android:padding="@dimen/_5sdp"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/grey_600"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            android:layout_margin="@dimen/_10sdp">
+            <com.business.findtrue.custom.RegularTextInputLayout
+                android:id="@+id/inputLayoutOTP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/otp"
+                app:layout_constraintTop_toTopOf="parent">
+                <com.business.findtrue.custom.RegularTextInputEditText
+                    android:id="@+id/otp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:maxLength="6"
+                    android:inputType="number"
+                    android:textSize="@dimen/_12sdp"
+                    tools:text="gaurav@gmail.com"/>
+
+            </com.business.findtrue.custom.RegularTextInputLayout>
+
+            <com.business.findtrue.custom.RegularTextInputLayout
+                android:id="@+id/inputLayoutNewPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/new_password"
+                android:visibility="gone"
+                app:passwordToggleEnabled="true"
+                app:layout_constraintTop_toBottomOf="@+id/inputLayoutOTP">
+                <com.business.findtrue.custom.RegularTextInputEditText
+                    android:id="@+id/newPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:inputType="textPassword"
+                    android:textSize="@dimen/_12sdp"
+                    tools:text="gaurav@gmail.com"/>
+
+            </com.business.findtrue.custom.RegularTextInputLayout>
+
+            <com.business.findtrue.custom.RegularTextInputLayout
+                android:id="@+id/inputLayoutConfirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/confirm_pasword"
+                android:layout_marginTop="@dimen/_5sdp"
+                app:passwordToggleEnabled="true"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/inputLayoutNewPassword">
+                <com.business.findtrue.custom.RegularTextInputEditText
+                    android:id="@+id/confirmPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:layout_gravity="center"
+                    android:inputType="textPassword"
+                    android:imeOptions="actionDone"
+                    android:textSize="@dimen/_12sdp"
+                    tools:text="gaurav123"/>
+
+            </com.business.findtrue.custom.RegularTextInputLayout>
+
+
+            <com.business.findtrue.custom.RegularButton
+                android:id="@+id/submit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:text="@string/submit"
+                android:textColor="@color/white"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:backgroundTint="@color/purple_500"
+                app:layout_constraintTop_toBottomOf="@+id/inputLayoutConfirmPassword"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

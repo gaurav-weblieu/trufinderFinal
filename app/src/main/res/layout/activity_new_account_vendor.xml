@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainConstraint"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back"
+    tools:context=".vendor.NewAccountVendorActivity">
+
+
+    <View
+        android:id="@+id/bg_top_header"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".20"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0"/>
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_80sdp"
+        android:layout_marginTop="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bg_top_header"
+        app:srcCompat="@drawable/logo" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".80"
+        android:layout_margin="@dimen/_15sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1">
+
+        <com.business.findtrue.custom.TitleTextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_message_registration"
+            android:padding="@dimen/_5sdp"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/grey_600"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            android:layout_margin="@dimen/_10sdp">
+            <com.business.findtrue.custom.RegularTextInputLayout
+                android:id="@+id/inputLayoutBusinessName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/business_name"
+                app:layout_constraintTop_toTopOf="parent">
+                <com.business.findtrue.custom.RegularTextInputEditText
+                    android:id="@+id/businessName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:inputType="textCapWords"
+                    android:textSize="@dimen/_12sdp"
+                    tools:text="gaurav@gmail.com"/>
+
+            </com.business.findtrue.custom.RegularTextInputLayout>
+
+            <com.business.findtrue.custom.RegularTextInputLayout
+                android:id="@+id/inputLayoutOwnerName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/owner_name"
+                app:layout_constraintTop_toBottomOf="@+id/inputLayoutBusinessName">
+                <com.business.findtrue.custom.RegularTextInputEditText
+                    android:id="@+id/ownerName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:inputType="textCapWords"
+                    android:textSize="@dimen/_12sdp"
+                    tools:text="gaurav@gmail.com"/>
+
+            </com.business.findtrue.custom.RegularTextInputLayout>
+
+
+
+            <com.business.findtrue.custom.RegularTextInputLayout
+                android:id="@+id/inputLayoutMobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/mobile_no"
+                app:layout_constraintTop_toBottomOf="@+id/inputLayoutOwnerName">
+                <com.business.findtrue.custom.RegularTextInputEditText
+                    android:id="@+id/mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:maxLength="10"
+                    android:inputType="phone"
+                    android:textSize="@dimen/_12sdp"
+                    tools:text="gaurav@gmail.com"/>
+
+            </com.business.findtrue.custom.RegularTextInputLayout>
+
+            <com.business.findtrue.custom.RegularTextInputLayout
+                android:id="@+id/inputLayoutEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/emailID"
+                app:layout_constraintTop_toBottomOf="@+id/inputLayoutMobile">
+                <com.business.findtrue.custom.RegularTextInputEditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:maxLength="50"
+                    android:inputType="textEmailAddress"
+                    android:textSize="@dimen/_12sdp"
+                    tools:text="gaurav@gmail.com"/>
+
+            </com.business.findtrue.custom.RegularTextInputLayout>
+
+
+            <com.business.findtrue.custom.RegularTextInputLayout
+                android:id="@+id/inputLayoutPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/password"
+                app:passwordToggleEnabled="true"
+                app:layout_constraintTop_toBottomOf="@+id/inputLayoutEmail">
+                <com.business.findtrue.custom.RegularTextInputEditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:maxLength="50"
+                    android:inputType="textPassword"
+                    android:textSize="@dimen/_12sdp"
+                    tools:text="gaurav@gmail.com"/>
+
+            </com.business.findtrue.custom.RegularTextInputLayout>
+
+            <CheckBox
+                android:id="@+id/termAndCondition"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_regular"
+                android:checked="true"
+                android:buttonTint="@color/purple_500"
+                android:text="@string/term_condition"
+                app:layout_constraintTop_toBottomOf="@+id/inputLayoutPassword"/>
+
+            <com.business.findtrue.custom.RegularButton
+                android:id="@+id/submit"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_40sdp"
+                android:text="@string/submit"
+                android:textColor="@color/white"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:backgroundTint="@color/purple_500"
+                app:layout_constraintTop_toBottomOf="@+id/termAndCondition"/>
+
+            <com.business.findtrue.custom.RegularTextView
+                android:id="@+id/login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/already_signup"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintTop_toBottomOf="@+id/submit"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!--    <RelativeLayout-->
+<!--        android:id="@+id/btnRelative"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="45dp"-->
+<!--        android:layout_marginBottom="36dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/guideline2"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:background="@drawable/btn_back"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/guideline" >-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/btnSave"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_centerInParent="true"-->
+<!--            android:layout_marginLeft="5dp"-->
+<!--            android:layout_marginRight="5dp"-->
+<!--            android:background="@null"-->
+<!--            android:gravity="center"-->
+<!--            android:text="SUBMIT"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textAppearance="@style/TextAppearance.AppCompat.Medium"-->
+<!--            android:textColor="@color/white" />-->
+
+<!--        <ProgressBar-->
+<!--            android:id="@+id/progressBar"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_toRightOf="@+id/btnSave"-->
+<!--            android:padding="3dp"-->
+<!--            android:visibility="gone"-->
+<!--            android:indeterminateTint="@color/grey_300"/>-->
+
+<!--    </RelativeLayout>-->
+
+<!--    <androidx.appcompat.widget.AppCompatButton-->
+<!--        android:id="@+id/button"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="36dp"-->
+<!--        android:background="@drawable/btn_back"-->
+<!--        android:text="SUBMIT"-->
+<!--        android:visibility="gone"-->
+<!--        android:textColor="@color/white"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/guideline2"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/guideline" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextTextPersonName3"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="100dp"-->
+<!--        android:ems="10"-->
+<!--        android:hint="Business Name*"-->
+<!--        android:textSize="16sp"-->
+<!--        android:inputType="textCapSentences"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/guideline2"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/guideline"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/imageView3" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextTextPersonName4"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="70dp"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="textCapSentences"-->
+<!--        android:hint="Owner Name*"-->
+<!--        android:textSize="16sp"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/guideline2"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/guideline"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName3" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextPhone"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="70dp"-->
+<!--        android:ems="10"-->
+<!--        android:maxLength="10"-->
+<!--        android:inputType="number"-->
+<!--        android:hint="@string/mobNo"-->
+<!--        android:textSize="16sp"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/guideline2"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/guideline"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/editTextTextPersonName4" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextTextEmailAddress"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="70dp"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="textEmailAddress"-->
+<!--        android:hint="@string/emailID"-->
+<!--        android:textSize="16sp"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/guideline2"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/guideline"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/editTextPhone" />-->
+
+<!--    <EditText-->
+<!--        android:id="@+id/editTextTextPassword"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="70dp"-->
+<!--        android:ems="10"-->
+<!--        android:inputType="textPassword"-->
+<!--        android:hint="@string/password"-->
+<!--        android:textSize="16sp"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/guideline2"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/guideline"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/editTextTextEmailAddress" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/textView8"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="60dp"-->
+<!--        android:text="@string/term_condition"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/guideline2"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/guideline"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/editTextTextPassword" />-->
+
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageView3"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="50dp"-->
+<!--        android:src="@drawable/logo_truefind"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/guideline2"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/guideline"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

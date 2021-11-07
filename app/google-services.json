@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1019260354127",
+    "project_id": "true-find-5b8dc",
+    "storage_bucket": "true-find-5b8dc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1019260354127:android:d3a0910cbe5f898242f43a",
+        "android_client_info": {
+          "package_name": "com.business.findtrue"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1019260354127-30pibqtsa18qfv45r5293s40amb9dp5o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.business.findtrue",
+            "certificate_hash": "628f6f023331cc4e834941dbfb3a161521617f52"
+          }
+        },
+        {
+          "client_id": "1019260354127-e103qmimngi85sds96c7tcrshcnuqde1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLLJW2JpOskLQBvD6HyUJpHfVTJhien8w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1019260354127-e103qmimngi85sds96c7tcrshcnuqde1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

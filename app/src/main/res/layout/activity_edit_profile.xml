@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".vendor.EditProfileActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/purple_500"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:src="@drawable/ic_baseline_arrow_back_24">
+            </ImageView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="sans-serif-black"
+                android:gravity="center_vertical"
+                android:text="EDIT PROFILE"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar3">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp">
+
+            <com.business.findtrue.custom.RegularTextInputLayout
+                android:id="@+id/inputLayoutFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/business_name"
+                app:layout_constraintTop_toTopOf="parent">
+                <com.business.findtrue.custom.RegularTextInputEditText
+                    android:id="@+id/editBusinessName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:inputType="textCapWords"
+                    android:textSize="@dimen/_12sdp"
+                    tools:text="gaurav@gmail.com"/>
+
+            </com.business.findtrue.custom.RegularTextInputLayout>
+
+
+            <com.business.findtrue.custom.RegularTextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Vendor Name"
+                android:layout_marginTop="@dimen/_3sdp"
+                app:layout_constraintTop_toTopOf="parent">
+                <com.business.findtrue.custom.RegularTextInputEditText
+                    android:id="@+id/editVendorName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:inputType="textCapWords"
+                    android:textSize="@dimen/_12sdp"
+                    tools:text="gaurav@gmail.com"/>
+
+            </com.business.findtrue.custom.RegularTextInputLayout>
+
+            <com.business.findtrue.custom.RegularTextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Category Type"
+                android:layout_marginTop="@dimen/_3sdp"
+                app:layout_constraintTop_toTopOf="parent">
+                <com.business.findtrue.custom.RegularTextInputEditText
+                    android:id="@+id/tvSelectCategory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:focusable="false"
+                    android:inputType="textCapWords"
+                    android:textSize="@dimen/_12sdp"
+                    tools:text="gaurav@gmail.com"/>
+
+            </com.business.findtrue.custom.RegularTextInputLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerChip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp">
+
+            </com.google.android.material.chip.ChipGroup>
+
+
+
+                <com.business.findtrue.custom.RegularTextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="City"
+                    android:layout_marginTop="@dimen/_3sdp"
+                    app:layout_constraintTop_toTopOf="parent">
+                    <com.business.findtrue.custom.RegularTextInputEditText
+                        android:id="@+id/tvFindCity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:singleLine="true"
+                        android:focusable="false"
+                        android:inputType="textCapWords"
+                        android:textSize="@dimen/_12sdp"
+                        tools:text="gaurav@gmail.com"/>
+
+                </com.business.findtrue.custom.RegularTextInputLayout>
+
+
+            <com.business.findtrue.custom.RegularTextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Local Area"
+                android:layout_marginTop="@dimen/_3sdp"
+                app:layout_constraintTop_toTopOf="parent">
+                <com.business.findtrue.custom.RegularTextInputEditText
+                    android:id="@+id/editLocalArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:inputType="textCapWords"
+                    android:textSize="@dimen/_12sdp"
+                    tools:text="gaurav@gmail.com"/>
+
+            </com.business.findtrue.custom.RegularTextInputLayout>
+
+            <com.business.findtrue.custom.RegularTextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Address"
+                android:layout_marginTop="@dimen/_3sdp"
+                app:layout_constraintTop_toTopOf="parent">
+                <com.business.findtrue.custom.RegularTextInputEditText
+                    android:id="@+id/editAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:inputType="textCapWords"
+                    android:textSize="@dimen/_12sdp"
+                    tools:text="gaurav@gmail.com"/>
+
+            </com.business.findtrue.custom.RegularTextInputLayout>
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_3sdp">
+
+                <com.business.findtrue.custom.RegularTextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:hint="Pin Code"
+                    android:layout_marginRight="@dimen/_3sdp"
+                    app:layout_constraintTop_toTopOf="parent">
+                    <com.business.findtrue.custom.RegularTextInputEditText
+                        android:id="@+id/editPincode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:singleLine="true"
+                        android:inputType="number"
+                        android:textSize="@dimen/_12sdp"
+                        tools:text="gaurav@gmail.com"/>
+
+                </com.business.findtrue.custom.RegularTextInputLayout>
+
+
+                <com.business.findtrue.custom.RegularTextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:hint="Country"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    app:layout_constraintTop_toTopOf="parent">
+                    <com.business.findtrue.custom.RegularTextInputEditText
+                        android:id="@+id/editCountry"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:singleLine="true"
+                        android:inputType="textCapWords"
+                        android:textSize="@dimen/_12sdp"
+                        tools:text="gaurav@gmail.com"/>
+
+                </com.business.findtrue.custom.RegularTextInputLayout>
+
+            </LinearLayout>
+
+            <com.business.findtrue.custom.RegularTextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Website"
+                android:layout_marginTop="@dimen/_3sdp"
+                app:layout_constraintTop_toTopOf="parent">
+                <com.business.findtrue.custom.RegularTextInputEditText
+                    android:id="@+id/editWebSite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:inputType="textCapWords"
+                    android:textSize="@dimen/_12sdp"
+                    tools:text="gaurav@gmail.com"/>
+
+            </com.business.findtrue.custom.RegularTextInputLayout>
+
+            <com.business.findtrue.custom.RegularTextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contact No"
+                android:layout_marginTop="@dimen/_3sdp"
+                app:layout_constraintTop_toTopOf="parent">
+                <com.business.findtrue.custom.RegularTextInputEditText
+                    android:id="@+id/editContactNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:maxLength="10"
+                    android:inputType="number"
+                    android:textSize="@dimen/_12sdp"
+                    tools:text="gaurav@gmail.com"/>
+
+            </com.business.findtrue.custom.RegularTextInputLayout>
+
+
+
+            <com.business.findtrue.custom.TitleTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:text="Landline No." />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:orientation="horizontal">
+
+                <com.business.findtrue.custom.RegularTextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginRight="@dimen/_3sdp"
+                    android:layout_height="wrap_content"
+                    android:hint="Area Code"
+                    app:layout_constraintTop_toTopOf="parent">
+                    <com.business.findtrue.custom.RegularTextInputEditText
+                        android:id="@+id/editAreaCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:singleLine="true"
+                        android:maxLength="10"
+                        android:inputType="number"
+                        android:textSize="@dimen/_12sdp"
+                        tools:text="gaurav@gmail.com"/>
+
+                </com.business.findtrue.custom.RegularTextInputLayout>
+
+                <com.business.findtrue.custom.RegularTextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_3sdp"
+                    android:hint="Phone No."
+                    app:layout_constraintTop_toTopOf="parent">
+                    <com.business.findtrue.custom.RegularTextInputEditText
+                        android:id="@+id/editPhoneNo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:singleLine="true"
+                        android:maxLength="10"
+                        android:inputType="number"
+                        android:textSize="@dimen/_12sdp"
+                        tools:text="gaurav@gmail.com"/>
+
+                </com.business.findtrue.custom.RegularTextInputLayout>
+
+
+            </LinearLayout>
+
+            <com.business.findtrue.custom.TitleTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Established"
+                android:layout_marginTop="@dimen/_3sdp" />
+
+            <com.business.findtrue.custom.RegularTextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Established"
+                app:layout_constraintTop_toTopOf="parent">
+                <com.business.findtrue.custom.RegularTextInputEditText
+                    android:id="@+id/editTextEstablish"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:hint="For Example: 1984"
+                    android:textSize="@dimen/_12sdp"
+                    tools:text="gaurav@gmail.com"/>
+
+            </com.business.findtrue.custom.RegularTextInputLayout>
+
+
+            <com.business.findtrue.custom.TitleTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Accepts"
+                android:layout_marginTop="@dimen/_3sdp" />
+
+            <com.business.findtrue.custom.RegularTextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Payment Accepts"
+                app:layout_constraintTop_toTopOf="parent">
+                <com.business.findtrue.custom.RegularTextInputEditText
+                    android:id="@+id/editAccepts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:hint="For Example: Cash, Cheque"
+                    android:textSize="@dimen/_12sdp"
+                    tools:text="gaurav@gmail.com"/>
+
+            </com.business.findtrue.custom.RegularTextInputLayout>
+
+
+            <com.business.findtrue.custom.TitleTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Office Hours"
+                android:layout_marginTop="@dimen/_3sdp"
+                />
+
+            <com.business.findtrue.custom.RegularTextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Office Hours"
+                app:layout_constraintTop_toTopOf="parent">
+                <com.business.findtrue.custom.RegularTextInputEditText
+                    android:id="@+id/tvTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:singleLine="true"
+                    android:hint="For Example: 10AM - 8PM"
+                    android:textSize="@dimen/_12sdp"
+                    tools:text="gaurav@gmail.com"/>
+
+            </com.business.findtrue.custom.RegularTextInputLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/btnSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginBottom="30dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/btn_back">
+
+                <TextView
+                    android:id="@+id/btnSave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:text="SUBMIT"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/white" />
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/btnSave"
+                    android:padding="3dp"
+                    android:visibility="gone"
+                    android:indeterminateTint="@color/grey_300"/>
+
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

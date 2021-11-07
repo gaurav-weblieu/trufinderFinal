@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Project_gourav/TrueFinder Latest/FindTrue/app/src/main/res/drawable/search_bach.xml" value="0.22777777777777777" />
+        <entry key="..\:/Project_gourav/TrueFinder Latest/FindTrue/app/src/main/res/font/aclonica.xml" value="0.2361111111111111" />
+        <entry key="..\:/Project_gourav/TrueFinder Latest/FindTrue/app/src/main/res/font/adamina.xml" value="0.2361111111111111" />
+        <entry key="..\:/Project_gourav/TrueFinder Latest/FindTrue/app/src/main/res/layout/activity_all_category.xml" value="0.18518518518518517" />
+        <entry key="..\:/Project_gourav/TrueFinder Latest/FindTrue/app/src/main/res/layout/activity_category_details.xml" value="0.16666666666666666" />
+        <entry key="..\:/Project_gourav/TrueFinder Latest/FindTrue/app/src/main/res/layout/activity_login.xml" value="0.18518518518518517" />
+        <entry key="..\:/Project_gourav/TrueFinder Latest/FindTrue/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/Project_gourav/TrueFinder Latest/FindTrue/app/src/main/res/layout/activity_profile.xml" value="0.18518518518518517" />
+        <entry key="..\:/Project_gourav/TrueFinder Latest/FindTrue/app/src/main/res/layout/activity_search.xml" value="0.1686746987951807" />
+        <entry key="..\:/Project_gourav/TrueFinder Latest/FindTrue/app/src/main/res/layout/activity_view_profile.xml" value="0.2" />
+        <entry key="..\:/Project_gourav/TrueFinder Latest/FindTrue/app/src/main/res/layout/all_category_list_item.xml" value="0.22" />
+        <entry key="..\:/Project_gourav/TrueFinder Latest/FindTrue/app/src/main/res/layout/banner_image_view.xml" value="0.18" />
+        <entry key="..\:/Project_gourav/TrueFinder Latest/FindTrue/app/src/main/res/layout/category_details_item.xml" value="0.18" />
+        <entry key="..\:/Project_gourav/TrueFinder Latest/FindTrue/app/src/main/res/layout/category_item.xml" value="0.22" />
+        <entry key="..\:/Project_gourav/TrueFinder Latest/FindTrue/app/src/main/res/layout/change_city_dialog.xml" value="0.278125" />
+        <entry key="..\:/Project_gourav/TrueFinder Latest/FindTrue/app/src/main/res/layout/city_list.xml" value="0.278125" />
+        <entry key="..\:/Project_gourav/TrueFinder Latest/FindTrue/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
+        <entry key="..\:/Project_gourav/TrueFinder Latest/FindTrue/app/src/main/res/layout/fragment_user_login.xml" value="0.18518518518518517" />
+        <entry key="..\:/Project_gourav/TrueFinder Latest/FindTrue/app/src/main/res/layout/notification.xml" value="0.278125" />
+        <entry key="app/src/main/res/drawable/launcher_screen.xml" value="0.26145833333333335" />
+        <entry key="app/src/main/res/layout/activity_all_category.xml" value="0.2453125" />
+        <entry key="app/src/main/res/layout/activity_category_details.xml" value="0.2453125" />
+        <entry key="app/src/main/res/layout/activity_lead.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.2453125" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2453125" />
+        <entry key="app/src/main/res/layout/activity_notification.xml" value="0.2453125" />
+        <entry key="app/src/main/res/layout/activity_package.xml" value="0.2453125" />
+        <entry key="app/src/main/res/layout/activity_profile_image.xml" value="0.2453125" />
+        <entry key="app/src/main/res/layout/activity_registation.xml" value="0.2453125" />
+        <entry key="app/src/main/res/layout/activity_vendor_main.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/activity_view_profile.xml" value="0.2453125" />
+        <entry key="app/src/main/res/layout/all_category_list_item.xml" value="0.3234375" />
+        <entry key="app/src/main/res/layout/banner_image_view.xml" value="0.3234375" />
+        <entry key="app/src/main/res/layout/category_details_item.xml" value="0.2453125" />
+        <entry key="app/src/main/res/layout/change_city_dialog.xml" value="0.2453125" />
+        <entry key="app/src/main/res/layout/dialog_add_faq.xml" value="0.2453125" />
+        <entry key="app/src/main/res/layout/dialog_enquire_successfull.xml" value="0.2453125" />
+        <entry key="app/src/main/res/layout/edit_profile.xml" value="0.2453125" />
+        <entry key="app/src/main/res/layout/fragment_enquiry_dialog.xml" value="0.2453125" />
+        <entry key="app/src/main/res/layout/list_item.xml" value="0.2453125" />
+        <entry key="app/src/main/res/layout/logout_custom_view.xml" value="0.2453125" />
+        <entry key="app/src/main/res/layout/logout_dialog.xml" value="0.2453125" />
+        <entry key="app/src/main/res/layout/notification.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/notification_list_item.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/package_item.xml" value="0.2453125" />
+        <entry key="app/src/main/res/layout/table_list_item.xml" value="0.2453125" />
+        <entry key="app/src/main/res/menu/menu_items.xml" value="0.2453125" />
+        <entry key="app/src/main/res/menu/vendor_menu.xml" value="0.2453125" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.140625" />
+        <entry key="are/src/main/res/layout/are_toolbar.xml" value="0.2453125" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

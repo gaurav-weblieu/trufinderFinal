@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.business.findtrue">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FindTrue"
+        android:usesCleartextTraffic="true"
+        tools:node="merge">
+        <activity
+            android:name="com.business.findtrue.notification.NotificationActivity"
+            android:exported="true" />
+        <activity android:name=".user.AllCategoryActivity" />
+        <activity android:name="com.business.findtrue.vendor.LeadDeatilActivity" />
+        <activity android:name="com.business.findtrue.login.ForgotPasswordActivity" />
+        <activity android:name=".login.OTPActivity" />
+        <activity android:name="com.business.findtrue.vendor.PackageActivity" />
+        <activity android:name="com.business.findtrue.splash.PaymentActivity" />
+        <activity android:name="com.business.findtrue.vendor.LeadActivity" />
+        <activity android:name="com.business.findtrue.vendor.ProfileImageActivity" />
+        <activity android:name=".vendor.ManageViedoGalleryActivity" />
+        <activity android:name="com.business.findtrue.vendor.ManageGalleryActivity" />
+        <activity android:name="com.business.findtrue.vendor.AddFAQActivity" />
+        <activity android:name="com.business.findtrue.vendor.DescriptionActivity" />
+        <activity android:name=".vendor.EditProfileActivity" />
+        <activity android:name="com.business.findtrue.AddToShortListActivity" />
+        <activity android:name=".vendor.VendorMainActivity" />
+        <activity android:name=".vendor.NewAccountVendorActivity" />
+        <activity android:name="com.business.findtrue.login.ResetPasswordActivity" />
+        <activity android:name="com.business.findtrue.SearchActivity" />
+        <activity android:name="com.business.findtrue.profile.ProfileActivity" />
+        <activity android:name="com.business.findtrue.DomoActivity" />
+        <activity
+            android:name=".FreeListeningActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.business.findtrue.ServiceProviderLoginActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".HiringActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+        <activity
+            android:name="com.business.findtrue.ViewProfileActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.business.findtrue.CategoryDetailsActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.business.findtrue.registation.RegistationActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.business.findtrue.login.LoginActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:resizeableActivity="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".splash.SplashActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.FindTrue.Launcher">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" /> <!-- Only add it if you need Auto OTP reading feature -->
+        <!-- Only add it if you need Auto OTP reading feature is enabled -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <service
+            android:name="com.business.findtrue.service.FirebaseMessageReceiver"
+            >
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+
+        <meta-data
+            android:name="firebase_messaging_auto_init_enabled"
+            android:value="false" />
+        <meta-data
+            android:name="firebase_analytics_collection_enabled"
+            android:value="false" />
+    </application>
+
+</manifest>

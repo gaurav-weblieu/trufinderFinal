@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/_5sdp"
+    app:cardElevation="@dimen/_5sdp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/silver"
+            android:paddingBottom="@dimen/_20sdp"
+            android:orientation="vertical">
+            <com.business.findtrue.custom.TitleTextView
+                android:id="@+id/packageName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Package Name"
+                android:textColor="@color/purple_500"
+                android:textSize="@dimen/_14sdp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.1dp"
+                android:background="@color/purple_700"/>
+
+            <com.business.findtrue.custom.RegularTextView
+                android:id="@+id/packagePrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="100"
+                android:padding="5dp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:layout_below="@+id/tvPackageTitle"
+                android:layout_toRightOf="@+id/tvPackagePriceTitle"/>
+
+        </LinearLayout>
+
+
+
+
+        <com.business.findtrue.custom.RegularTextView
+            android:id="@+id/tvPackageExpireTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Expiry Date"
+            android:textColor="@color/grey_600"
+            android:gravity="center"
+            android:padding="5dp"
+            android:layout_below="@+id/tvPackagePriceTitle"/>
+
+        <com.business.findtrue.custom.RegularTextView
+            android:id="@+id/packageleadCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:gravity="center"
+            android:padding="5dp"
+            android:layout_gravity="center"
+            android:textColor="@color/grey_600"/>
+
+        <com.business.findtrue.custom.RegularButton
+            android:id="@+id/buy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:backgroundTint="@color/purple_500"
+            android:gravity="center"
+            android:textAllCaps="false"
+            android:text="Buy Now"
+            android:textColor="@color/white" />
+
+    </LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/toprelative"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/purple_500"
+        android:padding="@dimen/_5sdp"
+        app:layout_constraintTop_toTopOf="parent">
+        <com.business.findtrue.custom.TitleTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add FQAs"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:textColor="@color/white"/>
+        <ImageView
+            android:id="@+id/close"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:src="@drawable/cancel"
+            android:layout_centerInParent="true"
+            android:layout_alignParentRight="true"
+            android:padding="@dimen/_5sdp"
+            app:tint="@color/white"/>
+    </RelativeLayout>
+
+    <com.business.findtrue.custom.RegularTextInputLayout
+        android:id="@+id/inputLayoutQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/question"
+        android:layout_margin="@dimen/_10sdp"
+        app:layout_constraintTop_toBottomOf="@+id/toprelative">
+        <com.business.findtrue.custom.RegularTextInputEditText
+            android:id="@+id/question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionNext"
+            android:singleLine="true"
+            android:inputType="textEmailAddress"
+            android:textSize="@dimen/_12sdp"
+            tools:text="gaurav@gmail.com"/>
+
+    </com.business.findtrue.custom.RegularTextInputLayout>
+
+    <com.business.findtrue.custom.RegularTextInputLayout
+        android:id="@+id/inputLayoutAnswer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_160sdp"
+        android:hint="@string/answer"
+        android:layout_margin="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        app:layout_constraintTop_toBottomOf="@+id/inputLayoutQuestion">
+        <com.business.findtrue.custom.RegularTextInputEditText
+            android:id="@+id/answer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:singleLine="true"
+            android:layout_gravity="center"
+            android:inputType="textMultiLine"
+            android:imeOptions="actionDone"
+            android:gravity="top|left"
+            android:textSize="@dimen/_12sdp"
+            tools:text="gaurav123"/>
+
+    </com.business.findtrue.custom.RegularTextInputLayout>
+
+    <com.business.findtrue.custom.RegularButton
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"
+        android:textColor="@color/white"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:backgroundTint="@color/purple_500"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputLayoutAnswer"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
