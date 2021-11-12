@@ -39,7 +39,7 @@ public class BaseFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         apiInterface = RetrofitClient.getClient().create(ApiInterface.class);
-        pDialog = new SweetAlertDialog(getContext(),SweetAlertDialog.PROGRESS_TYPE);
+        pDialog = new SweetAlertDialog(getContext(),SweetAlertDialog.PROGRESS_TYPE );
     }
 
     public BaseFragment() {
@@ -54,8 +54,8 @@ public class BaseFragment extends Fragment {
     }
 
     protected void showDialog(){
-        pDialog.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
-        pDialog.setTitleText("Loading");
+        pDialog.getProgressHelper().setBarColor(Color.parseColor("#CD222C"));
+        pDialog.setTitleText("Please wait...");
         pDialog.setCancelable(false);
         pDialog.show();
     }

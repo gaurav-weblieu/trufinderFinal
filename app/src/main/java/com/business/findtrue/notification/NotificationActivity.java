@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.business.findtrue.R;
@@ -30,6 +31,7 @@ public class NotificationActivity extends BaseActivity {
     RecyclerView rvNotification;
     NotificationAdapter notificationAdapter;
     private ImageView back;
+    LinearLayout linear_layout_no_data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +61,7 @@ public class NotificationActivity extends BaseActivity {
 
 
         rvNotification = findViewById(R.id.rv_notification);
+        linear_layout_no_data = findViewById(R.id.linear_layout_no_data);
         back = (ImageView)findViewById(R.id.back);
         apiInterface = RetrofitClient.getClient().create(ApiInterface.class);
         getNotofication();
@@ -86,14 +89,19 @@ public class NotificationActivity extends BaseActivity {
                         notificationAdapter = new NotificationAdapter(NotificationActivity.this,response.body().getData());
                         rvNotification.setAdapter(notificationAdapter);
                     }else {
-                        Toast.makeText(NotificationActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                        linear_layout_no_data.setVisibility(View.VISIBLE);
+                        // Toast.makeText(NotificationActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                     }
 
                 }
+                linear_layout_no_data.setVisibility(View.VISIBLE);
+
             }
 
             @Override
             public void onFailure(Call<NotificationResponseModel> call, Throwable t) {
+                linear_layout_no_data.setVisibility(View.VISIBLE);
+
                 hideDialog();
             }
         });

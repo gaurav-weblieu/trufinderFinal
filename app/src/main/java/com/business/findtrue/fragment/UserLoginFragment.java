@@ -91,7 +91,7 @@ public class UserLoginFragment extends BaseFragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), RegistationActivity.class);
                 startActivity(intent);
-                getActivity().overridePendingTransition(R.anim.slide_up,  R.anim.no_animation);
+               // getActivity().overridePendingTransition(R.anim.slide_up,  R.anim.no_animation);
             }
         });
         forgetPassword.setOnClickListener(new View.OnClickListener() {
@@ -100,7 +100,7 @@ public class UserLoginFragment extends BaseFragment {
                 Intent intent = new Intent(getContext(), ForgotPasswordActivity.class);
                 intent.putExtra("intentType",1);
                 startActivity(intent);
-                getActivity().overridePendingTransition(R.anim.slide_up,  R.anim.no_animation);
+                //getActivity().overridePendingTransition(R.anim.slide_up,  R.anim.no_animation);
             }
         });
 
@@ -113,7 +113,7 @@ public class UserLoginFragment extends BaseFragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), MainActivity.class);
                 startActivity(intent);
-                getActivity().overridePendingTransition(R.anim.slide_up,  R.anim.no_animation);
+                //getActivity().overridePendingTransition(R.anim.slide_up,  R.anim.no_animation);
                 getActivity().finish();
 
             }
@@ -122,17 +122,18 @@ public class UserLoginFragment extends BaseFragment {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 if (CommonUtils.isOnline(getContext())){
                     if (checkValidation()){
+
+                        showDialog();
                         String email = editTextEmail.getText().toString();
                         String password = editTextPassword.getText().toString();
                         System.out.println("email------------------------"+email);
                         System.out.println("password------------------------"+password);
-                        showDialog();
                         apiInterface.userLogin(email, password).enqueue(new Callback<Login>() {
                             @Override
                             public void onResponse(Call<Login> call, Response<Login> response) {
-                                hideDialog();
                                 String message2 = response.body().getMessage();
                                 System.out.println("type----------------------"+response.body().getType());
                                 System.out.println("messsage2----------------------------"+message2);
@@ -140,7 +141,7 @@ public class UserLoginFragment extends BaseFragment {
                                     String message = response.body().getMessage();
                                     System.out.println("type----------------------"+response.body().getType());
                                     System.out.println("messsage----------------------------"+message);
-                                    Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
+                                    //Toast.makeText(getContext(), message, Toast.LENGTH_LONG).show();
                                     List<Result> results = response.body().getData();
                                     for (Result result:results){
                                         System.out.println("id-------------------------"+result.getId());
@@ -159,10 +160,14 @@ public class UserLoginFragment extends BaseFragment {
                                         CommonUtils.savePreferenceString(getContext(), AppConstant.IS_USERS, "user");
                                         Intent intent = new Intent(getContext(), MainActivity.class);
                                         startActivity(intent);
-                                        getActivity().overridePendingTransition(R.anim.slide_up,  R.anim.no_animation);
+                                       // getActivity().overridePendingTransition(R.anim.slide_up,  R.anim.no_animation);
                                         getActivity().finish();
+                                        hideDialog();
+
                                     }
                                 }else {
+                                    hideDialog();
+
                                     showErrorMessage("Oops", "Login Failed");
                                 }
                             }
@@ -175,6 +180,8 @@ public class UserLoginFragment extends BaseFragment {
                     }
 
                 }else {
+                    hideDialog();
+
                     Toast.makeText(getContext(), "Please check your intenet connection", Toast.LENGTH_LONG).show();
                 }
             }

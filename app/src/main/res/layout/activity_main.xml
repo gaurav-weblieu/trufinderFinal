@@ -148,7 +148,10 @@
                         android:id="@+id/editTextTextPersonName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="@dimen/_5sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:layout_marginBottom="@dimen/_5sdp"
                         android:background="@drawable/search_bach"
                         android:drawableLeft="@drawable/ic_baseline_search_24"
                         android:ems="10"
@@ -160,17 +163,60 @@
                 </RelativeLayout>
 
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvBannerImage"
+                <FrameLayout
+                    android:id="@+id/framrvBannerImage"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                    tools:listitem="@layout/banner_image_view"
-                    tools:itemCount="1"
-                    android:orientation="horizontal"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/searchRL"/>
+                    app:layout_constraintTop_toBottomOf="@+id/searchRL"
+                    android:layout_height="180dp">
+
+
+                    <com.facebook.shimmer.ShimmerFrameLayout
+                        android:id="@+id/banner_shimmerFrameLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+
+                    <!-- Adding 15 rows of placeholders -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:cardElevation="0dp"
+                        android:layout_margin="@dimen/_10sdp"
+                        app:cardBackgroundColor="@color/colorGrey"
+                        app:cardCornerRadius="@dimen/_10sdp"
+                        />
+
+                    </LinearLayout>
+
+                    </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvBannerImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        tools:listitem="@layout/banner_image_view"
+                        tools:itemCount="1"
+                        android:visibility="gone"
+                        android:orientation="horizontal"
+                        />
+
+                </FrameLayout>
+
+
+
 
                 <ImageView
                     android:id="@+id/bannerImage"
@@ -235,7 +281,7 @@
                     android:singleLine="true"
                     android:text="Hey, Welcome to True Find. "
                     android:textColor="@color/purple_500"
-                    app:layout_constraintTop_toBottomOf="@+id/rvBannerImage" />
+                    app:layout_constraintTop_toBottomOf="@+id/framrvBannerImage" />
 
                 <com.business.findtrue.custom.TitleTextView
                     android:id="@+id/categorylist"
@@ -262,14 +308,54 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <androidx.recyclerview.widget.RecyclerView
-                            android:id="@+id/recyclerView"
+                        <FrameLayout
+                            android:id="@+id/framrrecycle"
+                            android:layout_width="match_parent"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/searchRL"
+                            android:layout_height="match_parent">
+
+
+
+                        <com.facebook.shimmer.ShimmerFrameLayout
+                            android:id="@+id/cat_shimmerFrameLayout"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginLeft="@dimen/_5sdp"
-                            android:layout_marginRight="@dimen/_5sdp"
-                            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                            tools:listitem="@layout/category_item" />
+                            android:layout_gravity="center"
+                            android:orientation="vertical">
+
+
+                            <!-- Adding 15 rows of placeholders -->
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <include layout="@layout/shammer_main_cat_list_item" />
+
+                                <include layout="@layout/shammer_main_cat_list_item" />
+
+                                <include layout="@layout/shammer_main_cat_list_item" />
+
+                            </LinearLayout>
+
+
+
+                        </com.facebook.shimmer.ShimmerFrameLayout>
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recyclerView"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:visibility="gone"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:layout_marginRight="@dimen/_5sdp" />
+
+
+                        </FrameLayout>
+
 
                         <ProgressBar
                             android:id="@+id/progressBar"
@@ -314,18 +400,82 @@
 
                 </LinearLayout>
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvAdsBannerImage"
+                <FrameLayout
+                    android:id="@+id/add_fram"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/_5sdp"
                     android:layout_marginRight="@dimen/_5sdp"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    tools:listitem="@layout/banner_image_view"
-                    tools:itemCount="5"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/linear4"/>
+                    app:layout_constraintTop_toBottomOf="@+id/linear4"
+                    >
+
+
+                    <com.facebook.shimmer.ShimmerFrameLayout
+                        android:id="@+id/add_shimmerFrameLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+
+                        <!-- Adding 15 rows of placeholders -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="180dp"
+                                app:cardElevation="0dp"
+                                android:layout_margin="@dimen/_10sdp"
+                                app:cardBackgroundColor="@color/colorGrey"
+                                app:cardCornerRadius="@dimen/_10sdp"
+                                />
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="180dp"
+                                app:cardElevation="0dp"
+                                android:layout_margin="@dimen/_10sdp"
+                                app:cardBackgroundColor="@color/colorGrey"
+                                app:cardCornerRadius="@dimen/_10sdp"
+                                />
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="180dp"
+                                app:cardElevation="0dp"
+                                android:layout_margin="@dimen/_10sdp"
+                                app:cardBackgroundColor="@color/colorGrey"
+                                app:cardCornerRadius="@dimen/_10sdp"
+                                />
+
+
+
+                        </LinearLayout>
+
+                    </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvAdsBannerImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        tools:listitem="@layout/banner_image_view"
+                        android:visibility="gone"
+                        tools:itemCount="5" />
+
+                </FrameLayout>
+
 
                 <ImageView
                     android:id="@+id/bottomBannerImageOne"

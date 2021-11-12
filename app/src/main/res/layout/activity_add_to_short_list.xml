@@ -30,9 +30,9 @@
 
             <ImageView
                 android:id="@+id/ivBackScreen"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:padding="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_5sdp"
                 android:src="@drawable/ic_baseline_arrow_back_24" />
 
             <TextView
@@ -42,18 +42,63 @@
                 android:fontFamily="sans-serif-black"
                 android:gravity="center"
                 android:text="SHORTLIST"
+                android:layout_marginStart="@dimen/_10sdp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:textColor="@color/white" />
         </LinearLayout>
 
     </androidx.appcompat.widget.Toolbar>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewAddWishlist"
+
+    <FrameLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewAddWishlist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+        <LinearLayout
+            android:id="@+id/linear_layout_no_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:visibility="gone"
+            android:orientation="vertical"
+            >
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animationView"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:scaleType="centerCrop"
+            app:lottie_rawRes="@raw/no_short"
+            app:lottie_autoPlay="true"
+            android:layout_margin="15dp"
+            app:lottie_loop="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No Item In Shortlist.."
+                android:textStyle="bold"
+                android:textColor="@color/purple_200"
+                android:textSize="@dimen/_21sdp"
+                />
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

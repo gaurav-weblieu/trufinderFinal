@@ -48,4 +48,6 @@
 
     <color name="test">#33F6D3D3</color>
     <color name="testr">#33DBFFF7</color>
+    <color name="colorGrey">#dddddd</color>
+
 </resources>

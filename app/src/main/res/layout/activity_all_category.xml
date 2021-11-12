@@ -76,14 +76,65 @@
             android:textSize="@dimen/_12sdp" />
     </RelativeLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_margin="@dimen/_5sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchRL"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/all_category_list_item" />
+        android:layout_height="0dp">
+
+
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/all_cat_shimmerFrameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+
+            <!-- Adding 15 rows of placeholders -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <include layout="@layout/shimmer_all_cat_list_item" />
+                <include layout="@layout/shimmer_all_cat_list_item" />
+                <include layout="@layout/shimmer_all_cat_list_item" />
+                <include layout="@layout/shimmer_all_cat_list_item" />
+                <include layout="@layout/shimmer_all_cat_list_item" />
+                <include layout="@layout/shimmer_all_cat_list_item" />
+                <include layout="@layout/shimmer_all_cat_list_item" />
+                <include layout="@layout/shimmer_all_cat_list_item" />
+                <include layout="@layout/shimmer_all_cat_list_item" />
+                <include layout="@layout/shimmer_all_cat_list_item" />
+                <include layout="@layout/shimmer_all_cat_list_item" />
+                <include layout="@layout/shimmer_all_cat_list_item" />
+                <include layout="@layout/shimmer_all_cat_list_item" />
+                <include layout="@layout/shimmer_all_cat_list_item" />
+                <include layout="@layout/shimmer_all_cat_list_item" />
+                <include layout="@layout/shimmer_all_cat_list_item" />
+
+            </LinearLayout>
+
+
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_5sdp"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/all_category_list_item" />
+
+
+    </FrameLayout>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,7 @@
 package com.business.findtrue.splash;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Context;
 import android.content.Intent;
@@ -21,6 +22,9 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
 
         String isLoggedIn = CommonUtils.getPreferencesString(context, AppConstant.IS_LOGGED_IN);
         String isUser = CommonUtils.getPreferencesString(context, AppConstant.IS_USERS);

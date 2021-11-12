@@ -137,6 +137,6 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        overridePendingTransition(R.anim.no_animation, R.anim.slide_down);
+       // overridePendingTransition(R.anim.no_animation, R.anim.slide_down);
     }
 }

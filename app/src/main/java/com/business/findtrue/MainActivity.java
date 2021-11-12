@@ -49,6 +49,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
@@ -154,6 +155,8 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     RegularTextInputEditText name, email, mobile, bookingDate;
     ImageView notification;
 
+    ShimmerFrameLayout banner_shimmerFrameLayout,cat_shimmerFrameLayout,add_shimmerFrameLayout;
+
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -199,6 +202,7 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         tvLocation = findViewById(R.id.tvLocation);
         mRecyclerView.setNestedScrollingEnabled(true);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        progressBar.setVisibility(View.GONE);
         ivArrowDown = (ImageView) findViewById(R.id.ivArrowDown);
         editTextTextPersonName = findViewById(R.id.editTextTextPersonName);
         showMore = findViewById(R.id.showMore);
@@ -210,6 +214,13 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         bottomBannerImageThree = findViewById(R.id.bottomBannerImageThree);
         rvBannerImage = findViewById(R.id.rvBannerImage);
         rvAdsBannerImage = findViewById(R.id.rvAdsBannerImage);
+        banner_shimmerFrameLayout = findViewById(R.id.banner_shimmerFrameLayout);
+        cat_shimmerFrameLayout = findViewById(R.id.cat_shimmerFrameLayout);
+        add_shimmerFrameLayout = findViewById(R.id.add_shimmerFrameLayout);
+        banner_shimmerFrameLayout.startShimmerAnimation();
+        cat_shimmerFrameLayout.startShimmerAnimation();
+        add_shimmerFrameLayout.startShimmerAnimation();
+
 
 
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
@@ -467,7 +478,26 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                     progressBar.setVisibility(View.GONE);
                     categoryItemList = response.body();
                     if (categoryItemList != null) {
+
                         relativeShowMore.setVisibility(View.VISIBLE);
+
+                        rvBannerImage.setVisibility(View.VISIBLE);
+                        mRecyclerView.setVisibility(View.VISIBLE);
+                        rvAdsBannerImage.setVisibility(View.VISIBLE);
+
+
+                        banner_shimmerFrameLayout.stopShimmerAnimation();
+                        banner_shimmerFrameLayout.setVisibility(View.GONE);
+
+                        cat_shimmerFrameLayout.stopShimmerAnimation();
+                        cat_shimmerFrameLayout.setVisibility(View.GONE);
+
+                        add_shimmerFrameLayout.stopShimmerAnimation();
+                        add_shimmerFrameLayout.setVisibility(View.GONE);
+
+
+
+
                         CategoryAdapter categoryAdapter = new CategoryAdapter(MainActivity.this, categoryItemList, false, new ProductListner() {
                             @Override
                             public void productClick(int position, @NonNull Category category) {

@@ -146,7 +146,7 @@ public class ForgotPasswordActivity extends BaseActivity {
                     intent.putExtra("intentType",intentType);
                     intent.putExtra("data", checkedRadioButton[0].getText().toString().substring( 13 , checkedRadioButton[0].getText().toString().trim().length() ));
                     startActivity(intent);
-                    overridePendingTransition(R.anim.slide_up,  R.anim.no_animation);
+                  //  overridePendingTransition(R.anim.slide_up,  R.anim.no_animation);
                     finish();
                     materialAlertDialogBuilder.dismiss();
                 }

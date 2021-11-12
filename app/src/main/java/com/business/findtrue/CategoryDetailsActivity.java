@@ -12,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.pramonow.endlessrecyclerview.EndlessRecyclerView;
 import com.pramonow.endlessrecyclerview.EndlessScrollCallback;
 import com.business.findtrue.adapter.CategoryDetailsAdapter;
@@ -43,6 +44,7 @@ public class CategoryDetailsActivity extends AppCompatActivity {
     private TextView textView14;
     private int offset = 0;
     private EndlessRecyclerView endlessRecyclerView;
+    ShimmerFrameLayout shimmerFrameLayout;
 
 
     @Override
@@ -57,6 +59,8 @@ public class CategoryDetailsActivity extends AppCompatActivity {
         mRecyclerView = (RecyclerView)findViewById(R.id.recyclerDetails);
         progressBar3 = (ProgressBar)findViewById(R.id.progressBar3);
         textView14 = (TextView)findViewById(R.id.textView14);
+        shimmerFrameLayout =findViewById(R.id.shimmerFrameLayout);
+        shimmerFrameLayout.startShimmerAnimation();
         listCategoryData = new ArrayList<>();
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setHasFixedSize(true);
@@ -101,7 +105,7 @@ public class CategoryDetailsActivity extends AppCompatActivity {
     //create function get api call in getCategoryDetails
 
     private void getCategoryDetails(){
-        progressBar3.setVisibility(View.VISIBLE);
+        //progressBar3.setVisibility(View.VISIBLE);
         String replaceText = CATEGORY_NAME;
         String replaceCategoryName = replaceText.replace(' ', '-');
         System.out.println("rel------------------------------"+replaceCategoryName);
@@ -117,7 +121,7 @@ public class CategoryDetailsActivity extends AppCompatActivity {
             public void onResponse(Call<CategoryDetails> call, Response<CategoryDetails> response) {
                 System.out.println("---------------------------------------+++++");
                 if (response.isSuccessful()){
-                    progressBar3.setVisibility(View.GONE);
+                  //  progressBar3.setVisibility(View.GONE);
                     String type = response.body().getType();
                     System.out.println("type----------------------------"+type);
                     List<CategoryData> results = response.body().getData();
@@ -127,6 +131,11 @@ public class CategoryDetailsActivity extends AppCompatActivity {
 //
                         listCategoryData.add(data);
                         mCategoryDetailsAdapter.setList(listCategoryData);
+
+                        shimmerFrameLayout.stopShimmerAnimation();
+                        shimmerFrameLayout.setVisibility(View.GONE);
+                        endlessRecyclerView.setVisibility(View.VISIBLE);
+
                         //mRecyclerView.setAdapter(mCategoryDetailsAdapter);
                     }
                 }

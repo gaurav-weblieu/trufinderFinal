@@ -31,6 +31,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
@@ -80,23 +81,28 @@ public class AllCategoryActivity extends BaseActivity {
     @BindView(R.id.editTextSearch)
     EditText editTextSearch;
     List<CityList> cityLists = new ArrayList<>();
+    @BindView(R.id.all_cat_shimmerFrameLayout)
+    ShimmerFrameLayout all_cat_shimmerFrameLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_all_category);
         ButterKnife.bind(this);
+
+        all_cat_shimmerFrameLayout.startShimmerAnimation();
+
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
         getLastLocation();
         apiInterface = RetrofitClient.getClient().create(ApiInterface.class);
-        showDialog();
+        //showDialog();
         LinearLayoutManager linearLayoutManager = new GridLayoutManager(this, 2);
         mRecyclerView.setLayoutManager(linearLayoutManager);
         apiInterface.getCategory().enqueue(new Callback<List<Category>>() {
             @Override
             public void onResponse(Call<List<Category>> call, Response<List<Category>> response) {
                 if (response.isSuccessful()) {
-                    hideDialog();
+                   // hideDialog();
                     categoryItemList = response.body();
                     if (categoryItemList != null) {
 
@@ -126,6 +132,11 @@ public class AllCategoryActivity extends BaseActivity {
                         });
                         mRecyclerView.setAdapter(categoryAdapter);
 
+                        all_cat_shimmerFrameLayout.stopShimmerAnimation();
+                        all_cat_shimmerFrameLayout.setVisibility(View.GONE);
+
+                        mRecyclerView.setVisibility(View.VISIBLE);
+
                     }
                 }
 
@@ -133,7 +144,7 @@ public class AllCategoryActivity extends BaseActivity {
 
             @Override
             public void onFailure(Call<List<Category>> call, Throwable t) {
-                hideDialog();
+               // hideDialog();
             }
         });
 
@@ -433,4 +444,8 @@ public class AllCategoryActivity extends BaseActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }

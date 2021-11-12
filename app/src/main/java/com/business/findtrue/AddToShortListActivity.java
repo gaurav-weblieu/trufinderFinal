@@ -8,6 +8,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.business.findtrue.adapter.AddShortListAdapter;
 import com.business.findtrue.model.AddShortList;
@@ -33,6 +34,7 @@ public class AddToShortListActivity extends AppCompatActivity {
     private AddShortListAdapter addShortListAdapter;
     private List<WishlistData> listWishList;
     private ImageView ivBackScreen;
+    LinearLayout linear_layout_no_data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,7 @@ public class AddToShortListActivity extends AppCompatActivity {
 
         mRecyclerView = (RecyclerView)findViewById(R.id.recyclerViewAddWishlist);
         ivBackScreen = (ImageView)findViewById(R.id.ivBackScreen);
+        linear_layout_no_data = findViewById(R.id.linear_layout_no_data);
         listWishList = new ArrayList<>();
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerView.setHasFixedSize(true);
@@ -64,12 +67,14 @@ public class AddToShortListActivity extends AppCompatActivity {
                     }
 
                 }else {
+                    linear_layout_no_data.setVisibility(View.VISIBLE);
                     System.out.println("message----------------------"+response.body().getMessage());
                 }
             }
 
             @Override
             public void onFailure(Call<AddShortList> call, Throwable t) {
+                linear_layout_no_data.setVisibility(View.VISIBLE);
 
             }
         });

@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.business.findtrue.splash.PaymentActivity;
 import com.razorpay.Checkout;
 import com.razorpay.PaymentResultListener;
 import com.business.findtrue.R;
@@ -26,6 +28,7 @@ import com.business.findtrue.repositry.RetrofitClient;
 import com.business.findtrue.utils.AppConstant;
 import com.business.findtrue.utils.CommonUtils;
 
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -97,28 +100,85 @@ public class PackageActivity extends BaseActivity implements PaymentResultListen
 
     private void makepayment(PackageDetails packageDetails) {
         this.packageDetails = packageDetails;
+
         Checkout checkout = new Checkout();
         checkout.setKeyID("rzp_live_DYaCOsDQzuG2h7");
 
-        checkout.setImage(R.drawable.logo);
-        final Activity activity = this;
+        checkout.setImage(R.drawable.logo_for_payment);
+        final PackageActivity activity = this;
 
         try {
             JSONObject options = new JSONObject();
 
             options.put("name", CommonUtils.getPreferencesString(context, AppConstant.VENDOR_NAME));
             options.put("description", packageDetails.getPackageName());
-            options.put("image", "https://s3.amazonaws.com/rzp-mobile/images/rzp.png");
+            options.put("image", "https://truefind.in/assets/frontpage/images/True-find-logo.png");
             // options.put("order_id", "order_DBJOWzybf0sJbb");//from response of step 3.
             options.put("theme.color", "#CD222C");
             options.put("currency", "INR");
-            options.put("amount", 100 * (Integer.parseInt(packageDetails.getPrice())));//300 X 100
+           // options.put("amount", 100 * (Integer.parseInt(packageDetails.getPrice())));//300 X 100
+            options.put("amount", 100 * 1);//300 X 100
             options.put("prefill.email", CommonUtils.getPreferencesString(context, AppConstant.VENDOR_EMAIL_ID));
             options.put("prefill.contact", CommonUtils.getPreferencesString(context, AppConstant.VENDOR_CONTACT_NO));
             checkout.open(activity, options);
+
         } catch (Exception e) {
+
             Log.e("TAG", "Error in starting Razorpay Checkout", e);
+
         }
+
+
+        /*int amount_int= Integer.parseInt(packageDetails.getPrice());
+
+        Checkout checkout = new Checkout();
+
+
+        checkout.setKeyID("rzp_live_DYaCOsDQzuG2h7");
+
+        // Toast.makeText(Payment.this, "Id"+sharedPreferences_login.getString("razorpay_key_id",""), Toast.LENGTH_SHORT).show();
+        *//**
+         * Instantiate Checkout
+         *//*
+
+        *//**
+         * Set your logo here
+         *//*
+        checkout.setImage(R.drawable.logo);
+
+        *//**
+         * Reference to current activity
+         *//*
+        final PackageActivity activity = this;
+
+        *//**
+         * Pass your payment options to the Razorpay Checkout as a JSONObject
+         *//*
+        try {
+            JSONObject options = new JSONObject();
+
+            options.put("name", CommonUtils.getPreferencesString(context, AppConstant.VENDOR_NAME));
+            options.put("description", packageDetails.getPackageName());
+            options.put("image", "https://s3.amazonaws.com/rzp-mobile/images/rzp.png");
+            //options.put("order_id", "order_DBJOWzybf0sJbb");//from response of step 3.
+            options.put("theme.color", "#FECD08");
+            options.put("currency", "INR");
+            options.put("amount", String.valueOf(amount_int*100));//pass amount in currency subunits
+            options.put("prefill.email", CommonUtils.getPreferencesString(context, AppConstant.VENDOR_EMAIL_ID));
+            options.put("prefill.contact", CommonUtils.getPreferencesString(context, AppConstant.VENDOR_CONTACT_NO));
+            JSONObject retryObj = new JSONObject();
+            retryObj.put("enabled", true);
+            retryObj.put("max_count", 4);
+            options.put("retry", retryObj);
+
+            checkout.open(activity, options);
+
+        } catch(Exception e) {
+            Log.e(TAG, "Error in starting Razorpay Checkout", e);
+        }*/
+
+
+
     }
 
 
@@ -135,14 +195,11 @@ public class PackageActivity extends BaseActivity implements PaymentResultListen
                         hideDialog();
                         showSuccessMessage(response.body().getType(),"Your package is activate soon.");
                     }
-                }
-            }
+                } }
 
             @Override
-            public void onFailure(Call<ordertransactionResponseModel> call, Throwable t) {
-
-            }
-        });
+            public void onFailure(Call<ordertransactionResponseModel> call, Throwable t) { }
+        } );
     }
 
     @Override

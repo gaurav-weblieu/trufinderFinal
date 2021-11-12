@@ -116,14 +116,9 @@ public class LeadActivity extends BaseActivity implements LeadTableViewAdapter.L
                                 totalLeads.setText("Leads : " + response.body().getData().getLastUpdtTotlLeads());
                             } else {
                                 totalLeads.setText("Leads : 0");
-                            }
-                        }
-
-
-                    }
-                }
+                            } }
+                    } }
             }
-
             @Override
             public void onFailure(Call<TotalLeadsResponseModel> call, Throwable t) {
                 //showDialog();
@@ -145,11 +140,8 @@ public class LeadActivity extends BaseActivity implements LeadTableViewAdapter.L
                         //mRecyclerViewLead.setAdapter(leadTableViewAdapter);
                         leadTableViewAdapter.setList(leadList);
                         offset = leadList.size();
-                    }
-
-                }
+                    } }
             }
-
             @Override
             public void onFailure(Call<GetUserLead> call, Throwable t) {
                 Log.d("Error", t.getMessage());

@@ -94,7 +94,7 @@ public class ServiceProviderFragment extends BaseFragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), NewAccountVendorActivity.class);
                 startActivity(intent);
-                getActivity().overridePendingTransition(R.anim.slide_up,  R.anim.no_animation);
+               // getActivity().overridePendingTransition(R.anim.slide_up,  R.anim.no_animation);
             }
         });
 
@@ -104,7 +104,7 @@ public class ServiceProviderFragment extends BaseFragment {
                 Intent intent = new Intent(getContext(), ForgotPasswordActivity.class);
                 intent.putExtra("intentType",2);
                 startActivity(intent);
-                getActivity().overridePendingTransition(R.anim.slide_up,  R.anim.no_animation);
+               // getActivity().overridePendingTransition(R.anim.slide_up,  R.anim.no_animation);
             }
         });
 
@@ -117,7 +117,7 @@ public class ServiceProviderFragment extends BaseFragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getContext(), MainActivity.class);
                 startActivity(intent);
-                getActivity().overridePendingTransition(R.anim.slide_up,  R.anim.no_animation);
+                //getActivity().overridePendingTransition(R.anim.slide_up,  R.anim.no_animation);
                 getActivity().finish();
 
             }
@@ -174,7 +174,7 @@ public class ServiceProviderFragment extends BaseFragment {
                                         CommonUtils.savePreferenceString(getContext(), AppConstant.IS_USERS, "vendor");
                                         Intent intent = new Intent(getContext(), VendorMainActivity.class);
                                         startActivity(intent);
-                                        getActivity().overridePendingTransition(R.anim.slide_up,  R.anim.no_animation);
+                                     //   getActivity().overridePendingTransition(R.anim.slide_up,  R.anim.no_animation);
                                         getActivity().finish();
                                     }
                                 else {

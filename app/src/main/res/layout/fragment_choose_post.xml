@@ -33,6 +33,7 @@
                     android:hint="@string/choose_post"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                     app:layout_constraintTop_toBottomOf="@+id/inputLayoutEmail">
+
                     <com.business.findtrue.custom.RegularAutoComplateText
                         android:id="@+id/choosePost"
                         android:layout_width="match_parent"

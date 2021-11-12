@@ -91,10 +91,13 @@ public class CategoryDetailsAdapter extends RecyclerView.Adapter<CategoryDetails
         Glide.with(mContext).load(categoryData.getFullProfilePic()).centerCrop().placeholder(R.drawable.no_img).into(holder.ivImage);
         holder.tvVenderName.setText(categoryData.getVendorName());
         holder.tvAddress.setText(categoryData.getAddress());
+
+        if (categoryData.getPackagePrice()!=null){
         if (categoryData.getPackagePrice().equals("0")){
             holder.tvPrice.setText("PACKAGE PRICE : " +"\u20B9" +"Ask for Price");
         }else {
             holder.tvPrice.setText("PACKAGE PRICE : " +"\u20B9" +categoryData.getPackagePrice());
+        }
         }
 
         vndrbox = categoryData.getId();
@@ -224,6 +227,8 @@ public class CategoryDetailsAdapter extends RecyclerView.Adapter<CategoryDetails
                     }
                 });
                 //Navigation.createNavigateOnClickListener(R.id.action_categoryDetailsFragment_to_enquiryDialogFragment).onClick(holder.itemView);
+
+
             }
 
         });
@@ -243,8 +248,12 @@ public class CategoryDetailsAdapter extends RecyclerView.Adapter<CategoryDetails
         holder.image_shortlist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String isLoggedIn = CommonUtils.getPreferencesString(mContext, AppConstant.IS_LOGGED_IN);
                 if (isLoggedIn.equals("true")){
+
+                    holder.image_shortlist.setImageResource(R.drawable.ic_round_favorite_24);
+
                     apiInterface = RetrofitClient.getClient().create(ApiInterface.class);
                     String USER_ID = CommonUtils.getPreferencesString(mContext, AppConstant.USER_ID);
                     String id = categoryDataList.get(position).getId();
@@ -255,6 +264,7 @@ public class CategoryDetailsAdapter extends RecyclerView.Adapter<CategoryDetails
                         @Override
                         public void onResponse(Call<ResponseRequest> call, Response<ResponseRequest> response) {
                             if (response.isSuccessful()){
+
                                 System.out.println("message----------------------"+response.body().getMessage());
                                 Toast.makeText(mContext, response.body().getMessage(), Toast.LENGTH_LONG).show();
                             }

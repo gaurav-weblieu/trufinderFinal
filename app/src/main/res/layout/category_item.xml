@@ -5,6 +5,11 @@
     android:id="@+id/cardView"
     app:cardCornerRadius="@dimen/_10sdp"
     app:cardElevation="3dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:background="?selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+
     android:layout_margin="@dimen/_5sdp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
