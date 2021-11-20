@@ -41,8 +41,6 @@ public class PaymentActivity extends AppCompatActivity {
     Api api;
     String stage = "TEST";
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -171,15 +169,12 @@ public class PaymentActivity extends AppCompatActivity {
 
 
 
-
-
-
 //        compositeDisposable.add(api.getToken(String.valueOf(randomNumber), amount, "INR").subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new Consumer<Res>() {
 //            @Override
 //            public void accept(Res res) throws Exception {
 //                if (res.getStatus().equals("OK")){
 //                    System.out.println("-----------------------------"+res.getMessage());
-//                    CFPaymentService.getCFPaymentServiceInstance().doPayment(PaymentActivity.this, dataSend, res.getCftoken(), "TEST", "#F8A31A", "#FFFFFF", false);
+//                    CFPaymentService.getCFPaymentServiceInstance(                                                                                                                  ).doPayment(PaymentActivity.this, dataSend, res.getCftoken(), "TEST", "#F8A31A", "#FFFFFF", false);
 //                }else {
 //                    Log.e("accept",res.getMessage());
 //                    Toast.makeText(PaymentActivity.this, res.getMessage(), Toast.LENGTH_LONG).show();

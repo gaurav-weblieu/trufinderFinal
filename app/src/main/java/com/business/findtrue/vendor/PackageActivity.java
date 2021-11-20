@@ -116,8 +116,8 @@ public class PackageActivity extends BaseActivity implements PaymentResultListen
             // options.put("order_id", "order_DBJOWzybf0sJbb");//from response of step 3.
             options.put("theme.color", "#CD222C");
             options.put("currency", "INR");
-           // options.put("amount", 100 * (Integer.parseInt(packageDetails.getPrice())));//300 X 100
-            options.put("amount", 100 * 1);//300 X 100
+            options.put("amount", 100 * (Integer.parseInt(packageDetails.getPrice())));//300 X 100
+           // options.put("amount", 100 * 1);//300 X 100
             options.put("prefill.email", CommonUtils.getPreferencesString(context, AppConstant.VENDOR_EMAIL_ID));
             options.put("prefill.contact", CommonUtils.getPreferencesString(context, AppConstant.VENDOR_CONTACT_NO));
             checkout.open(activity, options);
@@ -204,6 +204,6 @@ public class PackageActivity extends BaseActivity implements PaymentResultListen
 
     @Override
     public void onPaymentError(int i, String s) {
-        Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, s, Toast.LENGTH_SHORT).show();
     }
 }

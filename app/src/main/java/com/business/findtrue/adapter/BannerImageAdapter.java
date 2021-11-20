@@ -1,6 +1,8 @@
 package com.business.findtrue.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.business.findtrue.R;
+import com.business.findtrue.WebActivity;
 import com.business.findtrue.model.AllAdsBannerResponseModel;
 
 import java.util.List;
@@ -43,6 +46,14 @@ public class BannerImageAdapter extends RecyclerView.Adapter<BannerImageAdapter.
                 .load(baseURl+"/"+ item.getBannerImage())
                 .into(holder.imageView);
 
+        holder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               Intent intent = new Intent(mContext, WebActivity.class);
+               intent.putExtra("url",item.getBannerHeading());
+               mContext.startActivity(intent);
+            }
+        });
 
     }
 

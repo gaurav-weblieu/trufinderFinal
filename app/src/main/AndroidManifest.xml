@@ -21,34 +21,37 @@
         android:usesCleartextTraffic="true"
         tools:node="merge">
         <activity
-            android:name="com.business.findtrue.notification.NotificationActivity"
+            android:name=".WebActivity"
+            android:exported="false" />
+        <activity
+            android:name=".notification.NotificationActivity"
             android:exported="true" />
         <activity android:name=".user.AllCategoryActivity" />
-        <activity android:name="com.business.findtrue.vendor.LeadDeatilActivity" />
-        <activity android:name="com.business.findtrue.login.ForgotPasswordActivity" />
+        <activity android:name=".vendor.LeadDeatilActivity" />
+        <activity android:name=".login.ForgotPasswordActivity" />
         <activity android:name=".login.OTPActivity" />
-        <activity android:name="com.business.findtrue.vendor.PackageActivity" />
-        <activity android:name="com.business.findtrue.splash.PaymentActivity" />
-        <activity android:name="com.business.findtrue.vendor.LeadActivity" />
-        <activity android:name="com.business.findtrue.vendor.ProfileImageActivity" />
+        <activity android:name=".vendor.PackageActivity" />
+        <activity android:name=".splash.PaymentActivity" />
+        <activity android:name=".vendor.LeadActivity" />
+        <activity android:name=".vendor.ProfileImageActivity" />
         <activity android:name=".vendor.ManageViedoGalleryActivity" />
-        <activity android:name="com.business.findtrue.vendor.ManageGalleryActivity" />
-        <activity android:name="com.business.findtrue.vendor.AddFAQActivity" />
-        <activity android:name="com.business.findtrue.vendor.DescriptionActivity" />
+        <activity android:name=".vendor.ManageGalleryActivity" />
+        <activity android:name=".vendor.AddFAQActivity" />
+        <activity android:name=".vendor.DescriptionActivity" />
         <activity android:name=".vendor.EditProfileActivity" />
-        <activity android:name="com.business.findtrue.AddToShortListActivity" />
+        <activity android:name=".AddToShortListActivity" />
         <activity android:name=".vendor.VendorMainActivity" />
         <activity android:name=".vendor.NewAccountVendorActivity" />
-        <activity android:name="com.business.findtrue.login.ResetPasswordActivity" />
-        <activity android:name="com.business.findtrue.SearchActivity" />
-        <activity android:name="com.business.findtrue.profile.ProfileActivity" />
-        <activity android:name="com.business.findtrue.DomoActivity" />
+        <activity android:name=".login.ResetPasswordActivity" />
+        <activity android:name=".SearchActivity" />
+        <activity android:name=".profile.ProfileActivity" />
+        <activity android:name=".DomoActivity" />
         <activity
             android:name=".FreeListeningActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.business.findtrue.ServiceProviderLoginActivity"
+            android:name=".ServiceProviderLoginActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait" />
         <activity
@@ -59,19 +62,19 @@
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
         <activity
-            android:name="com.business.findtrue.ViewProfileActivity"
+            android:name=".ViewProfileActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.business.findtrue.CategoryDetailsActivity"
+            android:name=".CategoryDetailsActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.business.findtrue.registation.RegistationActivity"
+            android:name=".registation.RegistationActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.business.findtrue.login.LoginActivity"
+            android:name=".login.LoginActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:resizeableActivity="true"
             android:screenOrientation="portrait" />
@@ -105,14 +108,11 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <service
-            android:name="com.business.findtrue.service.FirebaseMessageReceiver"
-            >
+        <service android:name=".service.FirebaseMessageReceiver">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
 
         <meta-data
             android:name="firebase_messaging_auto_init_enabled"
