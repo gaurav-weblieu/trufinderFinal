@@ -90,7 +90,7 @@ public class NotificationActivity extends BaseActivity {
                         rvNotification.setAdapter(notificationAdapter);
                     }else {
                         linear_layout_no_data.setVisibility(View.VISIBLE);
-                        // Toast.makeText(NotificationActivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
+                        // Toast.makeText(NotificationAct    ivity.this, response.body().getMessage(), Toast.LENGTH_SHORT).show();
                     }
 
                 }

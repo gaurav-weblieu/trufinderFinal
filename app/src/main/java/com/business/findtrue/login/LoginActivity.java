@@ -37,8 +37,8 @@ public class LoginActivity extends BaseActivity {
         view_pager = (ViewPager)findViewById(R.id.view_pager);
 
         loginAdapter = new LoginAdapter(getSupportFragmentManager());
-        loginAdapter.addFragment(new UserLoginFragment(), "  User");
-        loginAdapter.addFragment(new ServiceProviderFragment(), "Provider");
+        loginAdapter.addFragment(new UserLoginFragment(), "User Login");
+        loginAdapter.addFragment(new ServiceProviderFragment(), "Business Login");
 
         view_pager.setAdapter(loginAdapter);
         tab_layout.setupWithViewPager(view_pager);

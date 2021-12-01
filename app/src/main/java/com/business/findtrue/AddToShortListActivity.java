@@ -51,8 +51,6 @@ public class AddToShortListActivity extends AppCompatActivity {
         apiInterface = RetrofitClient.getClient().create(ApiInterface.class);
         USER_ID = CommonUtils.getPreferencesString(context, AppConstant.USER_ID);
 
-
-
         apiInterface.getShortList(USER_ID).enqueue(new Callback<AddShortList>() {
             @Override
             public void onResponse(Call<AddShortList> call, Response<AddShortList> response) {
